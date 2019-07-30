@@ -22,7 +22,7 @@ public protocol HoedownRenderer {
 }
 
 open class HoedownHTMLRenderer: HoedownRenderer  {
-    open let internalRenderer: UnsafeMutablePointer<hoedown_renderer>
+    public let internalRenderer: UnsafeMutablePointer<hoedown_renderer>
     
     public init(flags: HoedownHTMLFlags = .None, nestingLevel: Int = 0) {
         self.internalRenderer = hoedown_html_renderer_new(hoedown_html_flags(flags.rawValue), CInt(nestingLevel))
